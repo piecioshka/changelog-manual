@@ -41,7 +41,8 @@ npx auto-changelog -u -l false
 
 feedback
 
-- PLUS: use template
+- PLUS: use templates
+- MINUS: you must to define a template
 
 templates examples (`.github/CHANGELOG_TEMPLATE.hbs`):
 
