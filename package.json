@@ -2,7 +2,7 @@
   "private": true,
   "name": "changelog-all-ways-to-build",
   "description": "",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "author": {
     "name": "Piotr Kowalski",
@@ -13,4 +13,7 @@
     "type": "git",
     "url": "git@github.com:piecioshka/changelog-all-ways-to-build.git"
   },
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
 }
