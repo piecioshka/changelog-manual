@@ -1,92 +1,78 @@
-# changelog - all ways to build
+# changelog
 
-How to build a changelog?
+[![node version](https://img.shields.io/node/v/changelog.svg)](https://www.npmjs.com/package/changelog)
+[![npm version](https://badge.fury.io/js/changelog.svg)](https://badge.fury.io/js/changelog)
+[![downloads count](https://img.shields.io/npm/dt/changelog.svg)](https://www.npmjs.com/package/changelog)
+[![size](https://packagephobia.com/badge?p=changelog)](https://packagephobia.com/result?p=changelog)
+[![license](https://img.shields.io/npm/l/changelog.svg)](https://piecioshka.mit-license.org)
+[![github-ci](https://github.com/piecioshka/changelog/actions/workflows/testing.yml/badge.svg)](https://github.com/piecioshka/changelog/actions/workflows/testing.yml)
+[![circle-ci](https://circleci.com/gh/piecioshka/changelog.svg?style=svg)](https://circleci.com/gh/piecioshka/changelog)
+[![semaphore-ci](https://semaphoreci.com/api/v1/piecioshka/changelog/branches/main/badge.svg)](https://semaphoreci.com/piecioshka/changelog)
 
-> My article in Polish 🇵🇱: https://piecioshka.pl/blog/2019/03/23/husky-commitlint-git-changelog.html
+📒 TODO
 
-## [git-changelog](https://npmjs.com/package/git-changelog) [[source code](https://github.com/rafinskipg/git-changelog)]
+> Give a ⭐️ if this project helped you!
 
-```bash
-npx git-changelog -e
-npx git-changelog -t false -a 'Angular: Spy LifecycleHooks'
-```
+## Preview 🎉
 
-## [generate-changelog](https://www.npmjs.com/package/generate-changelog) [[source code](https://github.com/lob/generate-changelog)]
+<https://piecioshka.github.io/changelog/>
 
-```bash
-npx generate-changelog -M # major
-npx generate-changelog -m # minor
-npx generate-changelog -p # patch
-```
+## Motivation
 
-feedback:
+TODO
 
-- MINUS: hard to use it, it's not intuitive tool
+## Features
 
-## [changelog](https://www.npmjs.com/package/changelog) [[source code](https://github.com/dylang/changelog)]
+* :white_check_mark: Done
+* :no_entry: Not done
 
-```bash
-npx changelog piecioshka/dotfiles all
-```
+## Step by step 👣
 
-feedback:
+* ...
 
-- MINUS: do not save into file
-
-## [auto-changelog](https://www.npmjs.com/package/auto-changelog)[[source code](https://github.com/CookPete/auto-changelog)]
+## Installation
 
 ```bash
-npx auto-changelog -u -l false
+npm install -g changelog
 ```
 
-feedback
+## Usage
 
-- PLUS: use templates
-- MINUS: you must to define a template
+```javascript
+```
 
-templates examples (`.github/CHANGELOG_TEMPLATE.hbs`):
-
-- [super-event-emitter](https://github.com/piecioshka/super-event-emitter/blob/d68ab7d88fc94e3f8894232dd427bf5a07d86910/.github/CHANGELOG_TEMPLATE.hbs#L4)
-
-project examples:
-
-- [super-event-emitter](https://github.com/piecioshka/super-event-emitter/blob/master/CHANGELOG.md)
-
-## [git-extras](https://github.com/tj/git-extras/blob/master/Commands.md#git-changelog) [[source code](https://github.com/tj/git-extras)]
+## CLI
 
 ```bash
-git changelog -a -n -p
 ```
 
-project examples:
-
-- [boilerplate-jasmine-babel](https://github.com/piecioshka/boilerplate-jasmine-babel/blob/master/CHANGELOG.md)
-
-## [conventional-changelog](https://www.npmjs.com/package/conventional-changelog-cli) [[source code](https://github.com/conventional-changelog/conventional-changelog)]
+## Unit tests
 
 ```bash
-npx conventional-changelog -i CHANGELOG.md -s -r 0
-# for Angular projects with convention eg. "chore(...)"
-npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+npm test
 ```
 
-Feedback:
-
-- use Conventional Commits
-
-## [semantic-release](https://www.npmjs.com/package/semantic-release) [[source code](https://github.com/semantic-release/semantic-release)]
+## End-to-end tests
 
 ```bash
-npx semantic-release
+npm run e2e
 ```
 
-Feedback:
-
-- MINUS: required GITHUB_TOKEN
-- MINUS: use Conventional Commits
-
-## [@angular/cli](https://www.npmjs.com/package/@angular/cli) [[source code](https://github.com/angular/angular-cli)]
+## Code coverage
 
 ```bash
-npx @angular/cli changelog
+npm run coverage
 ```
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />
+Feel free to check [issues page](https://github.com/piecioshka/changelog/issues/).
+
+## Related
+
+* [xxx](https://github.com/piecioshka/xxx) - yyy
+
+## License
+
+[The MIT License](https://piecioshka.mit-license.org) @ 2024

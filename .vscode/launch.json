@@ -1,0 +1,25 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run",
+      "program": "${workspaceFolder}/bin/cli.js",
+      "args": ["--repo", "/Users/piecioshka/projects-npm-packages/brute-force-generator"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Unit tests",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": ["--rootDir", "${workspaceFolder}/test/specs/"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
