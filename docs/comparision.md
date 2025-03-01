@@ -50,7 +50,7 @@ templates examples (`.github/CHANGELOG_TEMPLATE.hbs`):
 
 project examples:
 
-- [super-event-emitter](https://github.com/piecioshka/super-event-emitter/blob/master/CHANGELOG.md)
+- [super-event-emitter](https://github.com/piecioshka/super-event-emitter/blob/main/CHANGELOG.md)
 
 ## [git-extras](https://github.com/tj/git-extras/blob/master/Commands.md#git-changelog) [[source code](https://github.com/tj/git-extras)]
 
@@ -60,7 +60,7 @@ git changelog -a -n -p
 
 project examples:
 
-- [boilerplate-jasmine-babel](https://github.com/piecioshka/boilerplate-jasmine-babel/blob/master/CHANGELOG.md)
+- [boilerplate-jasmine-babel](https://github.com/piecioshka/boilerplate-jasmine-babel/blob/main/CHANGELOG.md)
 
 ## [conventional-changelog](https://www.npmjs.com/package/conventional-changelog-cli) [[source code](https://github.com/conventional-changelog/conventional-changelog)]
 
