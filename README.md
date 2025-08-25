@@ -1,69 +1,92 @@
-# changelog
+# changelog - all ways to build
 
-📒 TODO
+How to build a changelog?
 
-> Give a ⭐️ if this project helped you!
+> My article in Polish 🇵🇱: https://piecioshka.pl/blog/2019/03/23/husky-commitlint-git-changelog.html
 
-## Preview 🎉
-
-<https://piecioshka.github.io/changelog/>
-
-## Motivation
-
-TODO
-
-## Features
-
-* :white_check_mark: Done
-* :no_entry: Not done
-
-## Step by step 👣
-
-* ...
-
-## Installation
+## [git-changelog](https://npmjs.com/package/git-changelog) [[source code](https://github.com/rafinskipg/git-changelog)]
 
 ```bash
-npm install -g changelog
+npx git-changelog -e
+npx git-changelog -t false -a 'Angular: Spy LifecycleHooks'
 ```
 
-## Usage
-
-```javascript
-```
-
-## CLI
+## [generate-changelog](https://www.npmjs.com/package/generate-changelog) [[source code](https://github.com/lob/generate-changelog)]
 
 ```bash
+npx generate-changelog -M # major
+npx generate-changelog -m # minor
+npx generate-changelog -p # patch
 ```
 
-## Unit tests
+feedback:
+
+- MINUS: hard to use it, it's not intuitive tool
+
+## [changelog](https://www.npmjs.com/package/changelog) [[source code](https://github.com/dylang/changelog)]
 
 ```bash
-npm test
+npx changelog piecioshka/dotfiles all
 ```
 
-## End-to-end tests
+feedback:
+
+- MINUS: do not save into file
+
+## [auto-changelog](https://www.npmjs.com/package/auto-changelog)[[source code](https://github.com/CookPete/auto-changelog)]
 
 ```bash
-npm run e2e
+npx auto-changelog -u -l false
 ```
 
-## Code coverage
+feedback
+
+- PLUS: use templates
+- MINUS: you must to define a template
+
+templates examples (`.github/CHANGELOG_TEMPLATE.hbs`):
+
+- [super-event-emitter](https://github.com/piecioshka/super-event-emitter/blob/d68ab7d88fc94e3f8894232dd427bf5a07d86910/.github/CHANGELOG_TEMPLATE.hbs#L4)
+
+project examples:
+
+- [super-event-emitter](https://github.com/piecioshka/super-event-emitter/blob/main/CHANGELOG.md)
+
+## [git-extras](https://github.com/tj/git-extras/blob/master/Commands.md#git-changelog) [[source code](https://github.com/tj/git-extras)]
 
 ```bash
-npm run coverage
+git changelog -a -n -p
 ```
 
-## 🤝 Contributing
+project examples:
 
-Contributions, issues and feature requests are welcome!<br />
-Feel free to check [issues page](https://github.com/piecioshka/changelog/issues/).
+- [boilerplate-jasmine-babel](https://github.com/piecioshka/boilerplate-jasmine-babel/blob/main/CHANGELOG.md)
 
-## Related
+## [conventional-changelog](https://www.npmjs.com/package/conventional-changelog-cli) [[source code](https://github.com/conventional-changelog/conventional-changelog)]
 
-* [xxx](https://github.com/piecioshka/xxx) - yyy
+```bash
+npx conventional-changelog -i CHANGELOG.md -s -r 0
+# for Angular projects with convention eg. "chore(...)"
+npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+```
 
-## License
+Feedback:
 
-[The MIT License](https://piecioshka.mit-license.org) @ 2024
+- use Conventional Commits
+
+## [semantic-release](https://www.npmjs.com/package/semantic-release) [[source code](https://github.com/semantic-release/semantic-release)]
+
+```bash
+npx semantic-release
+```
+
+Feedback:
+
+- MINUS: required GITHUB_TOKEN
+- MINUS: use Conventional Commits
+
+## [@angular/cli](https://www.npmjs.com/package/@angular/cli) [[source code](https://github.com/angular/angular-cli)]
+
+```bash
+npx @angular/cli changelog
+```
