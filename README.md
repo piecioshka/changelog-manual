@@ -2,15 +2,16 @@
 
 Every way to generate a `CHANGELOG.md` - tested, compared, and reviewed in one place.
 
-Writing a changelog by hand is boring, and picking a generator means reading eight READMEs to find out that half of them need Conventional Commits, one refuses to write to a file, and another one wants a `GITHUB_TOKEN` before it does anything. This repo saves you that afternoon: every tool below has a copy-paste command, honest feedback (PLUS / MINUS), and links to real projects where the output landed.
+Writing a changelog by hand is boring, and picking a generator means reading a pile of READMEs to find out that half of them need Conventional Commits, one refuses to write to a file, and another one wants a `GITHUB_TOKEN` before it does anything. This repo saves you that afternoon: every option below has a copy-paste command, honest feedback (PLUS / MINUS), and links to real projects where the output landed - including the AI-assisted route I use today.
 
 ## Features ✨
 
-- 🧪 **8 tools, all actually run** - not a link dump, every command here was executed on a real repository
+- 🧪 **9 options, all actually run** - not a link dump, every command here was executed on a real repository
 - 📋 **Copy-paste ready** - each entry is a one-liner via `npx`, nothing to install globally
 - ⚖️ **Honest verdicts** - short PLUS / MINUS notes, so you learn the deal-breakers before you commit
 - 🔗 **Real output to inspect** - links to generated `CHANGELOG.md` files in public repositories
 - 🎨 **Template examples** - a working `.hbs` template for `auto-changelog`, ready to fork
+- 🤖 **The AI route too** - the one generators cannot do: entries written for a reader, not copied from commit subjects
 
 ## Which one should I pick? 🤔
 
@@ -24,8 +25,10 @@ Writing a changelog by hand is boring, and picking a generator means reading eig
 | `conventional-changelog` | yes                        | yes              | the de facto standard                |
 | `semantic-release`       | yes                        | yes              | fully automated releases in CI       |
 | `@angular/cli`           | yes                        | yes              | Angular projects, built into the CLI |
+| **AI agent + skill**     | no                         | yes              | a changelog a human wants to read    |
 
-> My article in Polish 🇵🇱: https://piecioshka.pl/blog/2019/03/23/husky-commitlint-git-changelog.html
+> [!NOTE]
+> My article in Polish 🇵🇱: [Husky, commitlint and a git changelog](https://piecioshka.pl/blog/2019/03/23/husky-commitlint-git-changelog.html)
 
 ## Tools 🛠️
 
@@ -115,3 +118,36 @@ Feedback:
 ```bash
 npx @angular/cli changelog
 ```
+
+### AI agent with a changelog skill
+
+This is the one I use today, and it is not another generator - it is the opposite approach. Every tool above turns commit subjects into list items. Here a script only **collects the raw material** (date, hash, subject, file stats, detected renames, PR number) and an AI agent writes the actual entries: it merges related commits into one bullet and describes the effect on the user instead of the change in the code.
+
+Give the agent a skill file that pins down the format, then ask it to write the changelog:
+
+```markdown
+Format: one flat chronological list, newest first. No Added/Changed/Fixed
+sections, no version headings.
+
+- YYYY-MM-DD — Verb, sentence describing the effect on the user. ([`hash`])
+
+Rules: merge related commits into a single entry, skip commits with no value
+for the reader (typos, reformatting, refactors with no behavior change), verify
+facts with `git show --stat` instead of trusting the commit subject, and mark
+breaking changes with **Breaking:** plus what the user has to do about it.
+```
+
+feedback:
+
+- PLUS: works on any commit history - no Conventional Commits, no tags, no config file
+- PLUS: merges related commits, so the changelog is shorter than the log (in one of my repositories 47 commits became 28 entries)
+- PLUS: entries describe what changed for the user, which no generator can infer from a commit subject
+- MINUS: not deterministic - the same history gives a slightly different wording each run
+- MINUS: needs review - the agent can misread a commit, so facts worth checking are the ones it did not take from `git show`
+- MINUS: not a CI step - this is a thing you run before a release, not on every push
+
+project examples:
+
+- [my-scripts](https://github.com/piecioshka/my-scripts/blob/main/CHANGELOG.md)
+- [git-scripts](https://github.com/piecioshka/git-scripts/blob/main/CHANGELOG.md)
+- [github-bash-scripts](https://github.com/piecioshka/github-bash-scripts/blob/main/CHANGELOG.md)
